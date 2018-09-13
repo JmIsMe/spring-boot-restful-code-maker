@@ -16,8 +16,6 @@ import java.util.List;
  */
 public class MakeCore {
 
-    private static final Logger log = LoggerFactory.getLogger(MakeCore.class);
-
     private static MakeCore makeCore;
 
     private ConfigEngine configEngine = ConfigEngine.getConfigEngine();

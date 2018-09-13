@@ -31,14 +31,17 @@ public class MakeByTemplate implements ThreadInterface{
             file.getParentFile().mkdirs();
         }
         try {
+            FileWriter fw = new FileWriter(file);
             cfg.getTemplate(bean.getTemplateName()).process(bean.getMap(),
-                    new FileWriter(file));
+                    fw);
+            fw.close();
+
         } catch (TemplateException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        System.out.println("输出文件至" + bean.getFilePath()+"成功");
 
     }
 }

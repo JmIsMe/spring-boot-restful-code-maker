@@ -28,6 +28,7 @@ public class MakeByGen implements ThreadInterface {
             config.validate();
             MyBatisGenerator generator = new MyBatisGenerator(config, new DefaultShellCallback(true), new ArrayList<String>());
             generator.generate(null);
+            System.out.println("生成Model和Mapper成功");
         } catch (Exception e) {
             throw new RuntimeException("生成Model和Mapper失败", e);
         }

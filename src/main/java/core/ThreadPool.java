@@ -1,6 +1,7 @@
 package core;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,8 @@ public class ThreadPool {
     }
 
     private void init(){
-        executor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS,
-                new ArrayBlockingQueue<Runnable>(5));
+        executor = new ThreadPoolExecutor(20, 50, 200, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(50));
 
     }
 

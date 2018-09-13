@@ -16,7 +16,6 @@ public class MakeThread implements Runnable{
 
     public void run() {
         thread.invoke();
-        System.err.println("xxxxxxxxxxxx");
     }
 
 }

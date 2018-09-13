@@ -22,7 +22,7 @@ class TemplateFactory {
 
     public static List<TemplateBean> getTemplate(){
         filePath =config.getLocalPath()+"/"+ projectName2FlieName(config.getProjectName())+"/";
-        System.err.println(filePath);
+        System.out.println(filePath);
         List<TemplateBean> l = new ArrayList<TemplateBean>();
         l.addAll(getCSTemplate());
         l.addAll(getOtherTemplate());
