@@ -14,7 +14,7 @@ import bean.NameUtil;
  */
 public class Config {
 
-    public static final String TEMPLATE_PATH = System.getProperty("user.dir")+"/src/main/resources/template";
+    public static final String TEMPLATE_PATH = System.getProperty("user.dir")+"/src/main/java/template";
     //public static final String TEMPLATE_PATH = System.getProperty("user.dir")+"/classes/template";
     private static Config config;
 
