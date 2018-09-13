@@ -41,7 +41,7 @@ public class NameUtil {
     public String getLowerDomainName(){
         if (lowerDomainName == null) {
             String domainName = getDomainName();
-            String first = String.valueOf(domainName);
+            String first = String.valueOf(domainName.charAt(0));
             lowerDomainName = domainName.replaceFirst(first,first.toUpperCase());
         }
         return lowerDomainName;
