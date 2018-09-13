@@ -14,14 +14,14 @@
 ![图片2](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/2.jpg)
 
 2、输入数据库地址:（ip/port）、账号、密码，点击connect。会有如下图3所示，出现改数据库中表的列表
-![图片3](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img3/.jpg)
+![图片3](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/3.jpg)
 
 3、选择需要生成代码的表名（表名格式如下图所示，生成的代码类名为大驼峰，对象名为小驼峰），输入项目名（e.g. com.xxx.xxx），作者名称，输出地址,点击makecode，会有日志打印（控制台我重定位到界面中了，select键暂时没用，嘿嘿）
-![图片4](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img4/.jpg)
+![图片4](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/4.jpg)
 
 4、生成代码如下图所示
-![图片5](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img5/.jpg)
-![图片6](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img6/.jpg)
+![图片5](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/5.png)
+![图片6](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/6.png)
 
 
 P.S. 我集成了Swagger，因为觉得挺帅的。该工具只是生成代码
