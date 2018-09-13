@@ -10,4 +10,4 @@
 
 # 使用介绍
 
-![图片1](https://github.com/JmIsMe/spring-boot-restful-code-maker/img/1.img)
+![图片1](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/1.jpg)
