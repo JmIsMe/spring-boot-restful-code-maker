@@ -73,6 +73,7 @@ public class CodeMaker {
     }
     private CodeMaker(){
         logOutput.setEditable(false);//设置不可编辑
+        outPutAddress.setEditable(false);
         JTextAreaOutputStream jTextAreaOutputStream = new JTextAreaOutputStream (logOutput);
         System.setOut (new PrintStream (jTextAreaOutputStream));//设置输出重定向
         System.setErr(new PrintStream(jTextAreaOutputStream));//将错误输出也重定向,用于e.pritnStackTrace
