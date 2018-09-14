@@ -89,7 +89,6 @@ class TemplateFactory {
         bean.setMap(data);
         bean.setFilePath(filePath);
         bean.setTemplateName(templateName);
-
         return bean;
 
     }
