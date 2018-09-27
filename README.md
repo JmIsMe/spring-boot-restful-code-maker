@@ -33,4 +33,4 @@ P.S. 我集成了Swagger，因为觉得挺帅的。还有就是该工具只是�
 3、更新了选择文件输出地址的资源管理器、简单地做了非空校验、增加了清楚日志按键。
 ![图片8](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/8.jpg)
 
-4、更新可以支持oracle（没测试）、sql server；密码非明文显示。
+4、更新可以支持oracle（没测试）、sql server（没测试）；密码非明文显示。
