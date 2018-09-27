@@ -35,7 +35,9 @@ public class CodeMaker {
     private JButton makeCodeButton;
     private JButton connectButton;
     private JButton selectButton;
-    private static final String driver = "com.mysql.cj.jdbc.Driver";
+    private static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String ORACLE_DRIVER = "oracle.jdbc.OracleDriver";
+    private static final String SQL_SERVER_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private JTextField projectName;
     private JTextField author;
     private JScrollPane tableNamesScroll;
@@ -43,8 +45,14 @@ public class CodeMaker {
     private JTextArea logOutput;
     private JList tableNamesList;
     private JButton clearLogButton;
+    private JRadioButton mysqlRadioButton;
+    private JRadioButton oracleRadioButton;
+    private JRadioButton sqlServerlRadioButton;
     private MakeCore makeCore = MakeCore.getMakeCore();
     private Config config = Config.getConfig();
+
+    private String dbAddress = null;
+    private String driver = null;
     public static CodeMaker codeMaker;
     public static void main(String[] args) {
         JFrame frame = new JFrame("CodeMaker");
@@ -63,6 +71,7 @@ public class CodeMaker {
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+
     }
 
     public static CodeMaker getCodeMaker(){
@@ -72,20 +81,45 @@ public class CodeMaker {
         return codeMaker;
     }
     private CodeMaker(){
+        ButtonGroup group=new ButtonGroup();
+        mysqlRadioButton.setSelected(true);
+        group.add(mysqlRadioButton);
+        group.add(oracleRadioButton);
+        group.add(sqlServerlRadioButton);
+
+        outPutAddress.setEditable(false);//设置不可编辑
+
         logOutput.setEditable(false);//设置不可编辑
-        outPutAddress.setEditable(false);
         JTextAreaOutputStream jTextAreaOutputStream = new JTextAreaOutputStream (logOutput);
         System.setOut (new PrintStream (jTextAreaOutputStream));//设置输出重定向
         System.setErr(new PrintStream(jTextAreaOutputStream));//将错误输出也重定向,用于e.pritnStackTrace
         connectButton.addActionListener(e -> {
-            String dbAddress = "jdbc:mysql://"+dbAddressInput.getText()+"?useSSL=false&serverTimezone=UTC";
+            String address = dbAddressInput.getText();
             String account = dbAccount.getText();
             String password = dbPassword.getText();
+            if (StringUtils.isEmpty(address)||StringUtils.isEmpty(account)||StringUtils.isEmpty(password)){
+                System.out.println("错误：没有填写数据相关信息");
+                return;
+            }
+
+            if (mysqlRadioButton.isSelected()){
+                dbAddress = "jdbc:mysql://"+address+"?useSSL=false&serverTimezone=UTC";
+                driver = MYSQL_DRIVER;
+            }else if (oracleRadioButton.isSelected()){
+                dbAddress = "jdbc:oracle:thin:@"+address;
+                driver = ORACLE_DRIVER;
+            }else if (sqlServerlRadioButton.isSelected()){
+                dbAddress = "jdbc:sqlserver://"+address;
+                driver = SQL_SERVER_DRIVER;
+            }
+
+
             Connection conn = null;
             try {
                 Class.forName(driver);
                 conn = DriverManager.getConnection(dbAddress , account , password);
             } catch (SQLException e1) {
+                System.out.println("数据库连接错误");
                 e1.printStackTrace();
             } catch (ClassNotFoundException e1) {
                 e1.printStackTrace();
@@ -133,9 +167,9 @@ public class CodeMaker {
                 mark = false;
             }
             if(mark) {
-                String dbAddress = "jdbc:mysql://"+address+"?useSSL=false&serverTimezone=UTC";
                 config.setJdbcUserName(account);
                 config.setJdbcUrl(dbAddress);
+                config.setDriver(driver);
                 config.setJdbcPassword(password);
                 config.setProjectName(proName);
                 config.setLocalPath(outputPath);

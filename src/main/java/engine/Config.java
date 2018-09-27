@@ -23,7 +23,7 @@ public class Config {
     private String jdbcUserName = "";
     private String jdbcPassword = "";
     private List<NameUtil> nameBeans;
-
+    private String driver = "";
     public final String MAPPER_TEMPLATE_PATH = "dao.MapperCommon";
     public final String MAPPER_PATH = "mapper";
     public final String CONTROLLER_PATH = "controller";
@@ -31,7 +31,7 @@ public class Config {
     public final String DOMAIN_PATH = "domain";
     public final String SERVICE_IMPL_PATH = "service/serviceImpl";
     public final String DAO_PATH = "dao";
-    public final String JDBC_DIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
+
     private String author = "";
     private String projectName = "";
 
@@ -129,6 +129,14 @@ public class Config {
 
     public String getProjectName() {
         return projectName;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
 

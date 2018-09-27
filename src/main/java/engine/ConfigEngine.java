@@ -92,7 +92,7 @@ public class ConfigEngine{
         ret.setConnectionURL(config.getJdbcUrl());
         ret.setUserId(config.getJdbcUserName());
         ret.setPassword(config.getJdbcPassword());
-        ret.setDriverClass(config.JDBC_DIVER_CLASS_NAME);
+        ret.setDriverClass(config.getDriver());
         return ret;
     }
 
