@@ -11,7 +11,7 @@
 2、输入数据库地址:（ip/port）、账号、密码，点击connect。会有如下图3所示，出现改数据库中表的列表
 ![图片3](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/3.jpg)
 
-3、选择需要生成代码的表名（表名格式如下图所示，生成的代码类名为大驼峰，对象名为小驼峰），输入项目名（e.g. com.xxx.xxx），作者名称，选择输出地址,点击makecode，会有日志打印（文件地址select键已可用）
+3、选择需要生成代码的表名（表名格式如下图所示，表内属性名称也是为该格式即xxxx_xxx_xxxx这样，生成的代码类名为大驼峰，对象名为小驼峰），输入项目名（e.g. com.xxx.xxx），作者名称，选择输出地址,点击makecode，会有日志打印（文件地址select键已可用）
 
 ![图片7](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/7.jpg)
 ![图片4](https://github.com/JmIsMe/spring-boot-restful-code-maker/blob/master/img/4.jpg)
